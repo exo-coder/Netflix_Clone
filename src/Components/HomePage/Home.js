@@ -22,6 +22,7 @@ export default function Home() {
   );
 }
 
+
 //CSS-styling
 const Main = styled.div`
   margin: auto;

@@ -1,14 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import { useMediaQuery } from "./hooks";
 
 export default function HomeMiddle({ data }) {
+  const isRowBased = useMediaQuery("(max-width: 1200px)");
   return (
     <>
       {data.map((item) => {
         const { id, title, subTitle, image, direction } = item;
+        //there is some media query customizing which i made by some hostum kooks in ./hooks
+        const styles = {
+          container: (isRowBased) => ({
+            display: "flex",
+            flexDirection: isRowBased ? "column" : direction,
+          }),
+        };
         return (
           <Main key={id}>
-            <div className="section" >
+            <div className="section" style={styles.container(isRowBased)}>
               <div className="texts">
                 <h1 className="title">{title}</h1>
                 <h3 className="subTitle">{subTitle}</h3>
@@ -35,14 +44,10 @@ const Main = styled.div`
     color: white;
     max-width: 1100px;
     width: 90%;
-
-    @media (max-width: 1200px) {
-      flex-direction: column;
-    }
   }
 
   .texts {
-    max-width: 700px;
+    max-width: 650px;
 
     @media (max-width: 1200px) {
       text-align: center;
@@ -75,7 +80,7 @@ const Main = styled.div`
 
   .img {
     z-index: 1;
-    max-width: 400px;
+    max-width: 500px;
 
     @media (max-width: 768px) {
       max-width: 350px;
