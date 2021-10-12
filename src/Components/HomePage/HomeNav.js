@@ -1,17 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 import { ReactComponent as NetflixLogo } from "../../Netflix_Logo.svg";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+//firbase stuff
+import initializeFirebase from "../../firebase"; // configuration
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
+const auth = getAuth(initializeFirebase);
+const provider = new GoogleAuthProvider();
 export default function HomeBanner() {
+  const signIn = () => {
+    signInWithPopup(auth,provider)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  
+
   return (
     <Main>
       <NetflixLogo className="logo" />
-      <Router>
-        <Link to='/detail' >
-          <button className="login-btn">Sign up</button>
-        </Link>
-      </Router>
+      <button onClick={signIn} className="login-btn">
+        Sign in
+      </button>
     </Main>
   );
 }
@@ -26,11 +41,10 @@ const Main = styled.div`
     margin: 25px;
     margin-left: 25px;
 
-
     @media (max-width: 767px) {
-    width: 110px;
-    height: 30px;
-    margin: 20px;
+      width: 110px;
+      height: 30px;
+      margin: 20px;
     }
   }
   .login-btn {
@@ -55,8 +69,8 @@ const Main = styled.div`
     }
 
     @media (max-width: 767px) {
-    margin: 15px;
-    height: 35px;
+      margin: 15px;
+      height: 35px;
     }
   }
 `;

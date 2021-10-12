@@ -10,8 +10,8 @@ export default function HomeBann() {
       <div className="texts">
         <h1 className="title-1">Unlimited movies, TV shows, and more.</h1>
         <h1 className="title-4">
-          Just hit the sign up button to sign up with google Authentication and
-          make a lot of Dreams .
+          Just hit the sign in button to enter with google Authentication and
+          make a lot of Dreams. 
         </h1>
       </div>
     </Main>
