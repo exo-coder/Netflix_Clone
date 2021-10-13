@@ -1,6 +1,17 @@
-import React from "react";
+import React , {useState,useEffect} from "react";
 import styled from "styled-components";
-import { useMediaQuery } from "./hooks";
+
+const useMediaQuery = (query) => {
+  const mediaMatch = window.matchMedia(query);
+  const [matches, setMatches] = useState(mediaMatch.matches);
+
+  useEffect(() => {
+    const handler = (e) => setMatches(e.matches);
+    mediaMatch.addListener(handler);
+    return () => mediaMatch.removeListener(handler);
+  });
+  return matches;
+};
 
 export default function HomeMiddle({ data }) {
   const isRowBased = useMediaQuery("(max-width: 1200px)");
