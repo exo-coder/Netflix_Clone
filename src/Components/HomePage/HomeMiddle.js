@@ -1,4 +1,4 @@
-import React , {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const useMediaQuery = (query) => {
@@ -18,7 +18,7 @@ export default function HomeMiddle({ data }) {
   return (
     <>
       {data.map((item) => {
-        const { id, title, subTitle, image, direction } = item;
+        const { id, title, subTitle, image, direction, gif } = item;
         //there is some media query customizing which i made by some hostum kooks in ./hooks
         const styles = {
           container: (isRowBased) => ({
@@ -33,7 +33,11 @@ export default function HomeMiddle({ data }) {
                 <h1 className="title">{title}</h1>
                 <h3 className="subTitle">{subTitle}</h3>
               </div>
-              <img className="img" src={image} alt=" " />
+              <div className="images">
+                <img className="img" src={image} alt=" " />
+                
+                <img className="gif" src={gif} alt="" />
+              </div>
             </div>
           </Main>
         );
@@ -89,12 +93,21 @@ const Main = styled.div`
     }
   }
 
+  .images {
+    position: relative;
+  }
+
   .img {
     z-index: 1;
-    max-width: 500px;
+    width: 400px;
+    height: 280px;
+    position: absolute;
+  }
 
-    @media (max-width: 768px) {
-      max-width: 350px;
-    }
+  .gif {
+    padding: 1px;
+    width: 398px;
+    height: 278px;
+
   }
 `;

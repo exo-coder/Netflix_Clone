@@ -4,7 +4,7 @@ const DataFixture = [
     title: "Enjoy on your TV.",
     subTitle: "Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV and more with Series.",
     image: "/images/tv.png",
-    gif: "/images/vikings1.gif",
+    gif: "/images/gif1.gif",
     direction: "row"
   },
   {
@@ -18,7 +18,8 @@ const DataFixture = [
     id: 3,
     title: "Watch everywhere.",
     subTitle: "Stream unlimited films and TV shows on your phone, tablet, laptop and TV without paying more.",
-    image: "/images/device-pile.png",
+    image: "/images/tv.png",
+    gif: "/images/gif2.gif",
     direction: "row"
   },
   {
