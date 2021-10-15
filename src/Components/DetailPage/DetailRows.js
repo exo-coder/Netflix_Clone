@@ -38,7 +38,7 @@ export default function DetailRows() {
 }
 
 const Main = styled.div`
-margin-top: 18px;
-margin-bottom: 2px;
+margin: auto;
+
 
 `;

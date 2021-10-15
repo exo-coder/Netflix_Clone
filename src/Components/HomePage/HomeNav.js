@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { ReactComponent as NetflixLogo } from "../../Netflix_Logo.svg";
-import { Link } from "react-router-dom";
 //firbase stuff
 import initializeFirebase from "../../firebase"; // configuration
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
@@ -18,8 +17,6 @@ export default function HomeBanner() {
         console.log(error);
       });
   };
-
-  
 
   return (
     <Main>

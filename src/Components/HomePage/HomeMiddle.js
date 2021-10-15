@@ -77,7 +77,7 @@ const Main = styled.div`
   .title {
     font-size: 50px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
       font-size: 30px;
       text-align: center;
     }
@@ -87,8 +87,8 @@ const Main = styled.div`
     font-size: 27px;
     font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-    @media (max-width: 768px) {
-      font-size: 17px;
+    @media (max-width: 1200px) {
+      font-size: 20px;
       text-align: center;
     }
   }

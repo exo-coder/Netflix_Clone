@@ -66,7 +66,7 @@ export default function DetailSingleRow({ title, fetchUrl, isLargeRow }) {
 }
 
 const Row = styled.div`
-  
+ 
   .row-title {
     margin-left: 10px;
     font-size: 23px;

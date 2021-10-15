@@ -6,7 +6,6 @@ import HomeEndFaq from "./HomeEndFaq";
 import HomeEndLinks from "./HomeEndLinks";
 import DataFixture from "../../Data_Fixture/midpageDatas"; //mid page datas
 import { faqData } from "../../Data_Fixture/faqData"; //Faq Questions datas
- 
 
 export default function Home() {
   const [data] = useState(DataFixture); //mid page datas
@@ -21,7 +20,6 @@ export default function Home() {
     </Main>
   );
 }
-
 
 //CSS-styling
 const Main = styled.div`

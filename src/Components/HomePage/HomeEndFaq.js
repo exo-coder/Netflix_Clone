@@ -1,29 +1,31 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { VscAdd } from "react-icons/vsc";
 import { VscChromeClose } from "react-icons/vsc";
 
 export default function HomeEndFaqData1({ faqDataEndPage }) {
-  const [showDetail, setShowDetail] = useState(false);
+  const [clicked, setClicked] = useState(false);
+
+  const toggle = (index) => {
+    //if clicked is active then close it .
+    if (clicked === index) {
+      return setClicked(null);
+    }
+    setClicked(index);
+  };
+
   return (
     <Main>
       <h1 className="title">Frequently Asked Questions</h1>
-      {faqDataEndPage.map((item) => {
+      {faqDataEndPage.map((item, index) => {
         const { id, header, body } = item;
         return (
           <div key={id} className="container">
-            <div
-              onClick={() => setShowDetail((showDetail) => !showDetail)}
-              className="header"
-            >
+            <div className="header" onClick={() => toggle(index)} key={index}>
               {header}
-              {showDetail ? (
-                <VscChromeClose className="icon" />
-              ) : (
-                <VscAdd className="icon" />
-              )}
+              {clicked === index ? <VscChromeClose /> : <VscAdd />}
             </div>
-            {showDetail ? <div className="body">{body}</div> : null}
+            {clicked === index ? <div className="body">{body}</div> : null}
           </div>
         );
       })}
@@ -60,7 +62,7 @@ const Main = styled.div`
     justify-content: space-between;
     font-weight: bold;
     padding: 0.6em 1.2em;
-    margin-bottom: 10px;
+    margin-top: 5px;
     background-color: #303030;
     user-select: none;
 
@@ -79,9 +81,9 @@ const Main = styled.div`
     }
   }
   .body {
-    font-size: 18px;
+    font-size: 19px;
     padding: 0.8em 1.2em;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
     background-color: #303030;
   }
 
