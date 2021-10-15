@@ -70,6 +70,9 @@ const Row = styled.div`
   .row-title {
     margin-left: 10px;
     font-size: 23px;
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
   }
 
   .row-posters {
@@ -91,6 +94,7 @@ const Row = styled.div`
     :hover {
       transform: scale(1.08);
     }
+
   }
 
   .row-posterLarge {
@@ -98,5 +102,10 @@ const Row = styled.div`
     :hover {
       transform: scale(1.09);
     }
+    @media (max-width: 768px) {
+      max-height: 200px;
+    }
   }
+
+  
 `;

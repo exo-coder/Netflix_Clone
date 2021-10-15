@@ -9,7 +9,7 @@ export default function Detail() {
     <Main>
       <DetailBann />
       <DetailRows />
-      <DetailEndPage />
+      `<DetailEndPage />`
     </Main>
   );
 }

@@ -9,7 +9,7 @@ const auth = getAuth(initializeFirebase);
 const provider = new GoogleAuthProvider();
 export default function HomeBanner() {
   const signIn = () => {
-    signInWithPopup(auth,provider)
+    signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result);
       })
@@ -35,20 +35,17 @@ const Main = styled.div`
   .logo {
     width: 130px;
     height: 35px;
-    margin: 25px;
-    margin-left: 25px;
+    margin: 15px;
 
     @media (max-width: 767px) {
       width: 110px;
       height: 30px;
-      margin: 20px;
     }
   }
   .login-btn {
     width: 80px;
     height: 30px;
-    margin: 25px;
-    margin-right: 25px;
+    margin: 15px;
     background-color: red;
     font-size: 15px;
     font-weight: bold;
@@ -63,11 +60,6 @@ const Main = styled.div`
       color: #000;
       background-color: #fff;
       transition: all 0.2s;
-    }
-
-    @media (max-width: 767px) {
-      margin: 15px;
-      height: 35px;
     }
   }
 `;

@@ -3,69 +3,101 @@ import styled from "styled-components";
 
 export default function DetailEndPage() {
   return (
-    <Main>
-      <div className="end__page">
-        <h1 className="end__page_title">There’s even more to watch.</h1>
-        <h1 className="end__page_text">
-          Netflix has an extensive library of feature films, documentaries, TV
-          programmes, anime, award-winning Netflix originals and more. Watch as
-          much as you want, any time you want.
-        </h1>
-        <button className="end__page_btn">JOIN</button>
-      </div>
+    <Container>
+      <div className="border" />
+      <Title>Questions? Contact us.</Title>
+      <Break />
+      <Row>
+        <Column>
+          <Link href="">FAQ</Link>
+          <Link href="">Investor Relations</Link>
+          <Link href="">Ways to Watch</Link>
+          <Link href="">Corporate Information</Link>
+          <Link href="">Netflix Originals</Link>
+        </Column>
 
-    </Main>
+        <Column>
+          <Link href="">Help Centre</Link>
+          <Link href="">Jobs</Link>
+          <Link href="">Terms of Use</Link>
+          <Link href="">Contact Us</Link>
+        </Column>
+
+        <Column>
+          <Link href="">Account</Link>
+          <Link href="">Redeem gift cards</Link>
+          <Link href="">Privacy</Link>
+          <Link href="">Speed Test</Link>
+        </Column>
+
+        <Column>
+          <Link href="">Media Centre</Link>
+          <Link href="">Buy gift cards</Link>
+          <Link href="">Cookie Preferences</Link>
+          <Link href="">Legal Notices</Link>
+        </Column>
+      </Row>
+      <Break />
+      <Text>Netflix Tehran</Text>
+    </Container>
   );
 }
 
-const Main = styled.div`
-.end__page {
-    align-items: center;
-    justify-content: center;
-    color: white;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-}
+const Container = styled.div`
+  border-top: 8px solid #222;
 
-.end__page_title {
-    font-size: 40px;
-    text-align: center;
-    padding-top: 10px;
-}
+  display: flex;
+  padding: 70px 0;
+  width: 100%;
+  margin: auto;
+  flex-direction: column;
+  .all-Over {
+  }
 
-.end__page_text {
-   text-align: center;
-   font-size: 1.5rem;
-   display: block;
-   width: 90%;
-   max-width: 500px;
-   margin-block-start: 1em;
-   
-}
+  @media (max-width: 1000px) {
+    padding: 70px 30px;
+  }
+`;
 
-.end__page_btn {
-    font-size: 13px;
-    align-items: center;
-    color: #fff;
-    background-color: red;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    margin-top: 10px;
-    padding: 0.7rem;
-    width: 70px;
-    transition: transform 450ms;
-}
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+`;
 
-.end__page_btn:hover{
-    transform: scale(1.08) ;
-    color: #000;
-    background-color: #e6e6e6;
-    transition: all 0.2s;
-}
+const Row = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 15px;
+  margin: 20px;
 
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+`;
 
+const Link = styled.a`
+  color: #757575;
+  margin-bottom: 20px;
+  font-size: 13px;
+  text-decoration: none;
+`;
 
+const Title = styled.p`
+  font-size: 16px;
+  color: #757575;
+  margin-bottom: 40px;
+  margin: 20px;
+`;
 
+const Text = styled.p`
+  font-size: 13px;
+  color: #757575;
+  margin-bottom: 40px;
+  margin: 20px;
+`;
+
+const Break = styled.div`
+  flex-basis: 100%;
+  height: 0;
 `;

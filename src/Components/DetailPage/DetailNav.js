@@ -1,19 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import { ReactComponent as NetflixLogo } from "../../Netflix_Logo.svg";
-import { getAuth,signOut } from 'firebase/auth';
+import { getAuth, signOut } from "firebase/auth";
 
 export default function HomeBanner() {
   const auth = getAuth();
   const signedOut = () => {
-   signOut(auth);
-   console.log("signed out babe");
-  }
+    signOut(auth);
+    console.log("signed out babe");
+  };
 
   return (
     <Main>
       <NetflixLogo className="logo" />
-      <button onClick={signedOut} className="login-btn">Sign out</button>
+      <button onClick={signedOut} className="login-btn">
+        Sign out
+      </button>
     </Main>
   );
 }
@@ -31,7 +33,6 @@ const Main = styled.div`
     @media (max-width: 767px) {
       width: 110px;
       height: 30px;
-      margin: 20px;
     }
   }
   .login-btn {
@@ -53,11 +54,6 @@ const Main = styled.div`
       color: #000;
       background-color: #fff;
       transition: all 0.2s;
-    }
-
-    @media (max-width: 767px) {
-      margin: 15px;
-      height: 35px;
     }
   }
 `;

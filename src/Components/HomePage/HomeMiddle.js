@@ -100,14 +100,14 @@ const Main = styled.div`
   .img {
     z-index: 1;
     width: 400px;
-    height: 280px;
+    height: 300px;
     position: absolute;
   }
 
   .gif {
     padding: 1px;
     width: 398px;
-    height: 278px;
+    height: 298px;
 
   }
 `;

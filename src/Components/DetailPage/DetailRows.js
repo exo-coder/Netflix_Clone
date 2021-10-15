@@ -39,6 +39,4 @@ export default function DetailRows() {
 
 const Main = styled.div`
 margin: auto;
-
-
 `;
