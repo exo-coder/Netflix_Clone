@@ -16,9 +16,7 @@ export default function App() {
   const auth = getAuth(initializeFirebase);
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      
     } else {
-      setIsUserSignedIn(false);
     }
   });
 
