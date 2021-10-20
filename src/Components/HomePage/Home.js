@@ -13,6 +13,7 @@ export default function Home() {
 
   return (
     <Main>
+      
       <HomeBann />
       <HomeMiddle data={data} />
       <HomeEndFaq faqDataEndPage={faqDataEndPage} />

@@ -2,12 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import { ReactComponent as NetflixLogo } from "../../Netflix_Logo.svg";
 import { getAuth, signOut } from "firebase/auth";
+import initializeFirebase from "../../firebase";
+import { useHistory } from "react-router";
 
 export default function HomeBanner() {
-  const auth = getAuth();
-  const signedOut = () => {
-    signOut(auth);
-    console.log("signed out babe");
+  const history = useHistory();
+  const auth = getAuth(initializeFirebase);
+
+  function signedOut() {
+    signOut(auth)
+      .then(() => {
+        history.push("/");
+        console.log("signed out...");
+      })
+      .catch((error) => {
+        alert("there is some problem with sign out. please try it again . ");
+        console.log("problem with sign out.");
+      });
   };
 
   return (

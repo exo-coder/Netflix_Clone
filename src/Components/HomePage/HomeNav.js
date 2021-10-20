@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { ReactComponent as NetflixLogo } from "../../Netflix_Logo.svg";
 //firbase stuff
-import initializeFirebase from "../../firebase"; // configuration
+import initializeFirebase from "../../firebase"; 
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const auth = getAuth(initializeFirebase);
 const provider = new GoogleAuthProvider();
-export default function HomeBanner() {
+
+export default function HomeNav(props) {
   const signIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
