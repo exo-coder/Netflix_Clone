@@ -38,7 +38,7 @@ export default function HomeBanner() {
       <NetflixLogo className="logo" />
       {userName ? (
         <LogOutDropDown>
-          <UserImg onClick={signedOut} src={userPhoto} alt={userName} />
+          <UserImg onClick={signedOut} src={userPhoto}  />
           <DropDown>
             <span>Exit</span>
           </DropDown>
@@ -53,7 +53,7 @@ export default function HomeBanner() {
 const Main = styled.div`
   display: flex;
   justify-content: space-between;
-
+ 
 
   .logo {
     width: 130px;
